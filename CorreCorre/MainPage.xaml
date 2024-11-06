@@ -1,16 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CorreCorre.MainPage">
+             x:Class="CorreCorre.MainPage"
+             Shell.NavBarIsVisible="False">
 
-    <Grid>
-        <Image Source="layer1.png"/>
-        <Image Source="layer2.png"/>
-        <Image Source="layer3.png"/>
-        <Image Source="layer4.png"/>
-        <Image Source="layer5.png"/>
-        <Image Source="layer6.png"/>
-        <Image Source="layer7.png"/>
-    </Grid>
+<Grid>
+        <Image Source="layer1.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+  
+    <HorizontalStackLayout x:Name="HSLayerArv1">
+        <Image Source="layer2.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+        <Image Source="layer2.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+        <Image Source="layer2.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+    </HorizontalStackLayout>
+
+    <HorizontalStackLayout x:Name="HSLayerArv2">
+        <Image Source="layer3.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+        <Image Source="layer3.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+        <Image Source="layer3.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+    </HorizontalStackLayout>
+
+    <HorizontalStackLayout x:Name="HSLayerChao">
+        <Image Source="layer4.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+         <Image Source="layer4.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+         <Image Source="layer4.png"
+               Aspect="Fill"
+               VerticalOptions="Fill"/>
+    </HorizontalStackLayout>
+    
+</Grid>
 
 </ContentPage>

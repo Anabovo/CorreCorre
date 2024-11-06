@@ -24,5 +24,63 @@ public partial class MainPage : ContentPage
 		CalculaVelocidade(w);
     }
 
+	void CalculaVelocidade(double w)
+	{
+		velocidade1=(int)(w*0.001);
+		velocidade2=(int)(w*0.004);
+		velocidade3=(int)(w*0.008);
+		velocidade=(int)(w*0.01);
+	}
+	void CorrigeTamanhoCenario(double w, double h)
+	{
+		foreach (var arvores in HSLayerArv1.Children)
+			(arvores as Image). WidthRequest = w;
+		foreach (var Arvores in HSLayerArv2.Children)
+			(Arvores as Image). WidthRequest = w;
+		foreach (var chao in HSLayerChao.Children)
+			(chao as Image). WidthRequest = w;
+
+		HSLayerArv1.WidthRequest = w;
+		HSLayerArv2.WidthRequest = w;
+		HSLayerChao.WidthRequest = w;
+	}
+	void GerenciaCenarios()
+	{
+		MoveCenario();
+		GerenciaCenario(HSLayerArv1);
+		GerenciaCenario(HSLayerArv2);
+		GerenciaCenario(HSLayerChao);
+	}
+	void MoveCenario()
+	{
+		HSLayerArv1.TranslationX-=velocidade1;
+		HSLayerArv2.TranslationX-=velocidade2;
+		HSLayerChao.TranslationX-=velocidade3;
+	}
+	void GerenciaCenario(HorizontalStackLayout hsl)
+	{
+		var view = (hsl.Children.First() as Image);
+		if (view.WidthRequest + hsl.TranslationX < 0)
+		{
+			hsl.Children.Remove(view);
+			hsl.Children.Add(view);
+			hsl.TranslationX=view.TranslationX;
+		}
+	}
+	async Task Desenha()
+	{
+		while(!estaMorto)
+		{
+			GerenciaCenarios();
+			await Task.Delay(tempoEntreFrames);
+		}
+	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		Desenha();
+    }
+
 }
+
 
