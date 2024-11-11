@@ -44,6 +44,14 @@
                Aspect="Fill"
                VerticalOptions="Fill"/>
     </HorizontalStackLayout>
+
+    <Image x:Name="imgPlayer"
+           Source="andar01.png"
+           HeightRequest="150"
+           WidthRequest="300"
+           VerticalOptions="End"
+           HorizontalOptions="Start"
+           Margin="0,0,0,165"/>
     
 </Grid>
 

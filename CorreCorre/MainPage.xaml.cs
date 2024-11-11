@@ -11,10 +11,13 @@ public partial class MainPage : ContentPage
 	int velocidade=0;
 	int larguraJanela=0;
 	int alturajanela0;
+	Player player;
 
 	public MainPage()
 	{
 		InitializeComponent();
+		player=new Player(imgPlayer);
+		player.Run();
 	}
 
     protected override void OnSizeAllocated(double w, double h)
@@ -44,12 +47,14 @@ public partial class MainPage : ContentPage
 		HSLayerArv2.WidthRequest = w;
 		HSLayerChao.WidthRequest = w;
 	}
-	void GerenciaCenarios()
+	async void GerenciaCenarios()
 	{
 		MoveCenario();
 		GerenciaCenario(HSLayerArv1);
 		GerenciaCenario(HSLayerArv2);
 		GerenciaCenario(HSLayerChao);
+		player.Desenha();
+		await Task.Delay(tempoEntreFrames);
 	}
 	void MoveCenario()
 	{
@@ -72,6 +77,7 @@ public partial class MainPage : ContentPage
 		while(!estaMorto)
 		{
 			GerenciaCenarios();
+			player.Desenha();
 			await Task.Delay(tempoEntreFrames);
 		}
 	}
@@ -80,8 +86,6 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
 		Desenha();
     }
-
-	
 
 }
 
