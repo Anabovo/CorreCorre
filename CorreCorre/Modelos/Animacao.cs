@@ -1,3 +1,5 @@
+using FFImageLoading.Maui;
+
 namespace CorreCorre;
 
 public class Animacao
@@ -12,12 +14,12 @@ public class Animacao
     bool parado = true;
     int frameAtual = 1;
 
-    protected Image compImagem;
+    protected CachedImageView imageView;
 
 
-    public Animacao(Image a)
+    public Animacao(CachedImageView a)
     {
-        compImagem = a;
+        imageView = a;
     }
 
     public void Stop()
@@ -58,7 +60,7 @@ public class Animacao
             nomeArquivo = animacao3[frameAtual];
             tamanhoAnimacao = animacao3.Count;
         }
-        compImagem.Source = ImageSource.FromFile(nomeArquivo);
+        imageView.Source = ImageSource.FromFile(nomeArquivo);
         frameAtual++;
         if (frameAtual >= tamanhoAnimacao)
         {

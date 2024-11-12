@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CorreCorre.MainPage"
+             xamlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImgeLoading.Maui"
              Shell.NavBarIsVisible="False">
 
 <Grid>
@@ -9,7 +10,7 @@
                Aspect="Fill"
                VerticalOptions="Fill"/>
   
-    <HorizontalStackLayout x:Name="HSLayerArv1">
+       <HorizontalStackLayout x:Name="HSLayerArv1">
         <Image Source="layer2.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
@@ -19,9 +20,9 @@
         <Image Source="layer2.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
-    </HorizontalStackLayout>
+       </HorizontalStackLayout>
 
-    <HorizontalStackLayout x:Name="HSLayerArv2">
+       <HorizontalStackLayout x:Name="HSLayerArv2">
         <Image Source="layer3.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
@@ -31,9 +32,9 @@
         <Image Source="layer3.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
-    </HorizontalStackLayout>
+       </HorizontalStackLayout>
 
-    <HorizontalStackLayout x:Name="HSLayerChao">
+       <HorizontalStackLayout x:Name="HSLayerChao">
         <Image Source="layer4.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
@@ -43,15 +44,21 @@
          <Image Source="layer4.png"
                Aspect="Fill"
                VerticalOptions="Fill"/>
-    </HorizontalStackLayout>
+       </HorizontalStackLayout>
 
-    <Image x:Name="imgPlayer"
+        <Image x:Name="imgPlayer"
            Source="andar01.png"
            HeightRequest="150"
            WidthRequest="300"
            VerticalOptions="End"
            HorizontalOptions="Start"
            Margin="0,0,0,165"/>
+
+       <ff:CachadImageView x:Name="imgPlayer"
+                           CacheTye="Disk"
+                           CacheDuration="365"/>
+
+       
     
 </Grid>
 

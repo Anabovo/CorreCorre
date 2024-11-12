@@ -1,10 +1,12 @@
+using FFImageLoading.Maui;
+
 namespace CorreCorre;
 
 public delegate void Callback();
 
 public class Player :Animacao
 {
-    public Player(Image a):base(a)
+    public Player(CachedImageView a):base(a)
     {
         for (int i=1; i<=17; ++i)
             animacao1.Add($"andar{i.ToString("D2")}.png");
