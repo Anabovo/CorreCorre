@@ -1,4 +1,6 @@
-﻿namespace CorreCorre;
+﻿using FFImageLoading.Maui;
+
+namespace CorreCorre;
 
 public partial class MainPage : ContentPage
 {
