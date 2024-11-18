@@ -48,15 +48,15 @@
 
 
 
-              <ff:CachedImageView x:Name="imgPlayer"
-                                  CacheType="Disk"
+              <ff:CachedImageView x:Name="imgPlayer"   
+                                  CacheType="All"
                                   CacheDuration="365"
                                   Source="andar01.png"
                                   HeightRequest="150"
-                                  WidthRequest="300"
+                                  WidthRequest="150"
                                   VerticalOptions="End"
                                   HorizontalOptions="Start"
-                                  Margin="0,0,0,165"/>
+                                  Margin="50,0,0,165"/>
 
 
 

@@ -10,10 +10,17 @@ public partial class MainPage : ContentPage
 	int velocidade1=0;
 	int velocidade2 =0;
 	int velocidade3=0;
-	int velocidade=0;
 	int larguraJanela=0;
 	int alturajanela0;
 	Player player;
+
+	const int forcaGravidade=6;
+	bool estaNoChao=true;
+	bool estaNoar=false;
+	bool estaPulando=false;
+	int tempoPulando=0;
+	int tempoNoAr=0;
+	const int forcaPulo=8;
 
 	public MainPage()
 	{

@@ -4,13 +4,13 @@ namespace CorreCorre;
 
 public delegate void Callback();
 
-public class Player :Animacao
+public class Player : Animacao
 {
-    public Player(CachedImageView a):base(a)
+    public Player(CachedImageView a) : base(a)
     {
-        for (int i=1; i<=17; ++i)
+        for (int i = 1; i <= 17; ++i)
             animacao1.Add($"andar{i.ToString("D2")}.png");
-        for (int i=1; i<=14; ++i)
+        for (int i = 1; i <= 14; ++i)
             animacao2.Add($"morre{i.ToString("D2")}.png");
 
         SetAnimacaoAtiva(1);
@@ -18,13 +18,13 @@ public class Player :Animacao
 
     public void Die()
     {
-        loop=false;
+        loop = false;
         SetAnimacaoAtiva(2);
     }
 
     public void Run()
     {
-        loop=true;
+        loop = true;
         SetAnimacaoAtiva(1);
         Play();
 
