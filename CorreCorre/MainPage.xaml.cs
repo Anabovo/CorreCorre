@@ -109,7 +109,7 @@ public partial class MainPage : ContentPage
 	void AplicaGravidae()
 	{
 		if(player.GetY()<0)
-		   layer.MoveY(forcaGravidade);
+		   player.MoveY(forcaGravidade);
 		else if (player.GetY()>=0)
 		{
 			player.SetY(0);
